@@ -1,0 +1,17 @@
+#####################
+# Unreal generated files that we don't need to save. Whenever you make a build, VS will generate these, except the starter content but this you can add in your project
+#####################
+*/Intermediate/
+*/Build
+*/Binaries
+*/DerivedDataCache
+*/Saved
+BuildingEscape/Content/StarterContent/
+
+###########################
+# Visual studio generated #
+###########################
+*VC.db
+*VC.db-wal
+*VC.db-shm
+*VC.opendb
