@@ -11,7 +11,4 @@ BuildingEscape/Content/StarterContent/
 ###########################
 # Visual studio generated #
 ###########################
-*VC.db
-*VC.db-wal
-*VC.db-shm
-*VC.opendb
+BuildingEscape/.vs/
