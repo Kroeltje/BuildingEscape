@@ -6,7 +6,11 @@
 */Binaries
 */DerivedDataCache
 */Saved
-BuildingEscape/Content/StarterContent/
+BuildingEscape/Content/StarterContent/HDRI
+BuildingEscape/Content/StarterContent/Textures
+BuildingEscape/Content/StarterContent/Audio
+BuildingEscape/Content/StarterContent/Particles
+BuildingEscape/Content/StarterContent/Maps
 
 ###########################
 # Visual studio generated #
