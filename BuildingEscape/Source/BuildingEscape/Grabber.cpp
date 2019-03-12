@@ -5,6 +5,7 @@
 #include "GameFramework/PlayerController.h"
 #include "Engine/Public/DrawDebugHelpers.h"
 
+
 #define OUT //we define a macro that does nothing, but it helps readin our code. in this example to show that by calling a method with pass-by references, changes the variable we put in
 
 // Sets default values for this component's properties
@@ -25,8 +26,34 @@ void UGrabber::BeginPlay()
 
 	UE_LOG(LogTemp, Warning, TEXT("Grabber active!"));
 	
+	///look for attached physics handle
+	PhysicsHandle = GetOwner()->FindComponentByClass<UPhysicsHandleComponent>();
+	if (PhysicsHandle)
+	{
+		//physics handle is found
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("Your %s has a grabber component but is missing a physics handle component. Add one."), *GetOwner()->GetName());
+	}
+	InputComponent = GetOwner()->FindComponentByClass<UInputComponent>();
+	if (InputComponent)
+	{
+		//input component found
+		UE_LOG(LogTemp, Warning, TEXT("Input Component found"));
+		///Bind the input axis
+		InputComponent->BindAction("Grab", IE_Pressed, this, &UGrabber::Grab);
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("Your %s has no input component. Add one."), *GetOwner()->GetName());
+	}
 }
 
+void UGrabber::Grab()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Grab pressed"));
+}
 
 // Called every frame
 void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
